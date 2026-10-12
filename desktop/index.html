@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corolet Desktop</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <strong class="brand">Corolet Desktop</strong>
+      <label class="field">
+        <span>Server</span>
+        <input id="server" value="http://127.0.0.1:3071" spellcheck="false" />
+      </label>
+      <label class="field">
+        <span>Workspace</span>
+        <input id="workspace" value="demo" spellcheck="false" />
+      </label>
+      <span id="status" class="status" data-state="off">Disconnected</span>
+    </header>
+
+    <main class="layout">
+      <section class="panel" aria-labelledby="docs-h">
+        <h2 id="docs-h">Memory</h2>
+        <p class="hint">Add a .md or .txt file. It is split, embedded and stored in this workspace.</p>
+        <button id="pick" type="button">Add file…</button>
+        <details>
+          <summary>Or paste text</summary>
+          <input id="paste-source" placeholder="Name, e.g. notes.md" />
+          <textarea id="paste-text" rows="6" placeholder="Paste the document text"></textarea>
+          <button id="paste-save" type="button">Store text</button>
+        </details>
+        <ul id="added" class="added" aria-live="polite"></ul>
+      </section>
+
+      <section class="panel chat" aria-labelledby="chat-h">
+        <h2 id="chat-h">Ask</h2>
+        <div id="log" class="log" aria-live="polite"></div>
+        <form id="ask-form" class="ask">
+          <input id="question" placeholder="Ask about this workspace's documents" autocomplete="off" />
+          <button id="send" type="submit">Ask</button>
+          <button id="stop" type="button" hidden>Stop</button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
