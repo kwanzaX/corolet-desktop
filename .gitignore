@@ -4,3 +4,8 @@ dist/
 *.log
 desktop/src-tauri/target/
 desktop/src-tauri/gen/
+playwright-report/
+test-results/
+reports/
+.stryker-tmp/
+coverage/
